@@ -20,7 +20,7 @@ Stock prices are fetched from the [IexFinance](https://iexcloud.io/docs/api/) AP
 
 ## Getting started
 
-1. Obtain an API key from [IexFinace console](iexcloud.io/console/tokens)
+1. Obtain an API key from [IexFinance console](iexcloud.io/console/tokens)
 2. In the `./python` directory, create a file named `.env`
 3. Place the API key in this file in the following format:
 
