@@ -1,0 +1,24 @@
+# config file version
+apiVersion: 1
+
+datasources:
+  # <string, required> name of the datasource. Required
+  - name: QuestDB
+    # <string, required> datasource type. Required
+    type: postgres
+    # <string, required> access mode. proxy or direct (Server or Browser in the UI). Required
+    access: direct
+    # <string> url
+    url: questdb:8812
+    # <string> Deprecated, use secureJsonData.password
+    password: quest
+    # <string> database user, if used
+    user: admin
+    # <string> database name, if used
+    database: qdb
+    # <bool> mark as default datasource. Max one per org
+    isDefault: true
+    version: 1
+    editable: true
+    jsonData:
+      sslmode: disable

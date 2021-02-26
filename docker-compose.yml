@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  questdb:
+    image: questdb/questdb
+    container_name: questdb_alerts
+    restart: always
+    ports:
+      - "8812:8812"
+      - "9000:9000"
+    networks:
+      - "questdb"
+    volumes:
+      - ./data/db:/root/.questdb/db
+  
+  grafana:
+    image: grafana/grafana
+    container_name: grafana_alerts
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - questdb
+    volumes:
+      - ./data/grafana:/var/lib/grafana/
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+
+networks:
+  questdb:
