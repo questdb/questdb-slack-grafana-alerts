@@ -11,7 +11,7 @@ connection = pg.connect(user="admin",
 cursor = connection.cursor()
 
 # Create table stock_prices
-cursor.execute("CREATE TABLE IF NOT EXISTS stock_prices (stock symbol, stockPrice double, createdDatetime timestamp)")
+cursor.execute("CREATE TABLE IF NOT EXISTS stock_prices (stock symbol, stockPrice double, createdDatetime timestamp) timestamp(createdDatetime)")
 
 try:
   print("Inserting rows into table 'stock_prices' - press Ctrl-C to stop")
