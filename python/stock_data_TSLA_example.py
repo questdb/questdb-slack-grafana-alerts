@@ -22,7 +22,7 @@ my_token = os.environ.get("API_TOKEN")
 try:
   print("Inserting rows into table 'stock_prices' - press Ctrl-C to stop")
   # Create table stock_prices
-  cursor.execute("CREATE TABLE IF NOT EXISTS stock_prices (stock symbol, stockPrice double, createdDatetime timestamp)")
+  cursor.execute("CREATE TABLE IF NOT EXISTS stock_prices (stock symbol, stockPrice double, createdDatetime timestamp) timestamp(createdDatetime)")
 
   while True:
     # Use Iex Stock get_quote method and store in a dataframe
