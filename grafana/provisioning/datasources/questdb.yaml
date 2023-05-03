@@ -10,8 +10,6 @@ datasources:
     access: direct
     # <string> url
     url: questdb:8812
-    # <string> Deprecated, use secureJsonData.password
-    password: quest
     # <string> database user, if used
     user: admin
     # <string> database name, if used
@@ -22,3 +20,6 @@ datasources:
     editable: true
     jsonData:
       sslmode: disable
+    secureJsonData:
+      # <string> Deprecated, use secureJsonData.password
+      password: ${GRAFANA_QUESTDB_PASSWORD}
