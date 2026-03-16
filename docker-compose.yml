@@ -24,6 +24,8 @@ services:
     volumes:
       - ./data/grafana:/var/lib/grafana/
       - ./grafana/provisioning/:/etc/grafana/provisioning/
+    environment:
+      - GRAFANA_QUESTDB_PASSWORD=quest
 
 networks:
   questdb:
